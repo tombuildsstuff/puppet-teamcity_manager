@@ -1,0 +1,14 @@
+{
+  "name": "tombuildsstuff/teamcitymanager",
+  "version": "1.0.0",
+  "author": "Tom Harvey",
+  "summary": "A puppet module to configure TeamCity Manager on Windows Systems.",
+  "license": "MIT",
+  "source": "https://github.com/tombuildsstuff/puppet-teamcitymanager",
+  "project_page": "https://github.com/tombuildsstuff/puppet-teamcitymanager",
+  "issues_url": null,
+  "dependencies": [
+    {"name":"opentable/download_file","version_requirement":"0.0.2"},
+    {"name":"puppetlabs/stdlib","version_requirement":">=3.0.0"}
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  name: "<%= @config['name'] %>",
+  project: "<%= @config['project'] %>",
+  steps: [
+    <% @config['steps'].each do |step| -%>
+       {
+         "name": "<%= step['name'] %>",
+         "type": "<%= step['type'] %>",
+         "settings": {
+           <% step['settings'].each do |key,value| -%>
+             "<%= key %>": <% if value.kind_of?(Array) %><%= value %>,<% else %>"<%= value %>",<% end %>
+           <% end -%>
+         }
+       },
+    <% end -%>
+  ],
+  triggers: [
+    <% @config['triggers'].each do |trigger| -%>
+       {
+         "type": "<%= trigger['type'] %>",
+         "settings": {
+           <% trigger['settings'].each do |key,value| -%>
+             "<%= key %>": <% if value.kind_of?(Array) %><%= value %>,<% else %>"<%= value %>",<% end %>
+           <% end -%>
+         }
+       },
+    <% end -%>
+  ],
+  vcsRoots: [
+    <% @config['vcsRoots'].each do |root| -%>
+      "<%= root %>",
+    <% end -%>
+  ]
+}

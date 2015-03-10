@@ -1,0 +1,9 @@
+{
+  "name": "<%= @config['name'] %>",
+  "type": "<%= @config['type'] %>",
+  "settings": {
+    <% @config['settings'].each do |key,value| -%>
+      "<%= key %>": "<%= value %>",
+    <% end -%>
+  }
+}
