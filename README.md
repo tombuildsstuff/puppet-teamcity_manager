@@ -14,6 +14,71 @@ mod 'tombuildsstuff/teamcitymanager'
 
 Usage
 -----
+Add a Project:
+```
+teamcity_manager::configuration::project { 'MyApplication-Project':
+  config => {
+    name => 'My Application'
+  }
+}
+```
+
+Add a VCS Root:
+```
+teamcity_manager::configuration::vcs_root { 'MyApplication-VCSRoot':
+  config => {
+    name => 'My Application VCS Root',
+    type => 'Git',
+    settings => {
+      authentication     => 'PrivateKeyFile',
+      branch             => 'master',
+      privateKeyFilePath => 'C:\\SSHKeys\\id_rsa.priv',
+      privateKeyPassword => 'p@ssw0rd',
+      repositoryUrl      => 'git@github.com:mycompany/myproject.git',
+    }
+  }
+}
+```
+
+Add a Build Configuration (triggered on VCS pushes):
+```
+teamcity_manager::configuration::build_configuration { "MyApplication-BuildConfig":
+  ensure => 'present',
+  config => {
+    name     => 'Build and Run Unit Tests',
+    project  => 'My Application',
+    steps    => [
+      {
+        name => 'Run Grunt Build',
+        type => 'CustomScript',
+        settings => {
+          customScript => "grunt build"
+        }
+      }
+    ],
+    triggers => [
+      {
+        type => 'vcs',
+        settings => { }
+      },
+    ],
+    vcsRoots => [ 'My Application VCS Root' ]
+  }
+}
+```
+
+Add a user:
+```
+teamcity_manager::configuration::user { 'user':
+  config => {
+    username => 'user',
+    password => 'p@ssw0rd',
+    email    => 'me@mydomain.com',
+    fullName => 'User Name'
+  }
+}
+```
+
 TODO
 
 Testing
