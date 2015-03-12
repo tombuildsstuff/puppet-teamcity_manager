@@ -2,14 +2,14 @@ Puppet-TeamCity Manager
 ===============
 
 A puppet module to configure TeamCity Manager on Windows Systems.
-[![Project Build Status](https://travis-ci.org/tombuildsstuff/puppet-teamcitymanager.svg?branch=master)](https://travis-ci.org/tombuildsstuff/puppet-teamcitymanager)
+[![Project Build Status](https://travis-ci.org/tombuildsstuff/puppet-teamcity_manager.svg?branch=master)](https://travis-ci.org/tombuildsstuff/puppet-teamcity_manager)
 
 Installation
 ------------
 
 Add this to your Puppetfile:
 ```puppet
-mod 'tombuildsstuff/teamcitymanager'
+mod 'tombuildsstuff/teamcity_manager'
 ````
 
 Usage
