@@ -8,7 +8,7 @@
   "project_page": "https://github.com/tombuildsstuff/puppet-teamcity_manager",
   "issues_url": null,
   "dependencies": [
-    {"name":"opentable/download_file","version_requirement":"1.0.0"},
+    {"name":"opentable/download_file","version_requirement":">=0.0.2"},
     {"name":"puppetlabs/stdlib","version_requirement":">=3.0.0"}
   ]
 }
