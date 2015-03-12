@@ -1,6 +1,6 @@
 {
   "name": "tombuildsstuff/teamcity_manager",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Tom Harvey",
   "summary": "A puppet module to configure TeamCity Manager on Windows Systems.",
   "license": "MIT",
