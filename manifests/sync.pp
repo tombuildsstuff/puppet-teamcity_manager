@@ -7,6 +7,7 @@ class teamcity_manager::sync
   exec { 'teamcity_manager::sync::sync-with-teamcity':
     command     => "${teamcity_manager::installDirectory}\\TeamCityManager.exe",
     logoutput   => true,
+    returns     => [ 0 ],
     require     => File[$teamcity_manager::configDirectory]
   }
 }
