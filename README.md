@@ -14,6 +14,16 @@ mod 'tombuildsstuff/teamcity_manager'
 
 Usage
 -----
+Configure TeamCity Manager on a system:
+```
+class { '::teamcity_manager':
+  teamcityServer   => 'teamcity.mydomain.com',
+  teamcityUsesSsl  => false,
+  teamcityUsername => 'puppetadmin',
+  teamcityPassword => 'p@ssw0rd',
+}
+```
+
 Add a Project:
 ```
 teamcity_manager::configuration::project { 'MyApplication-Project':
